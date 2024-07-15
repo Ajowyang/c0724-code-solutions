@@ -8,10 +8,10 @@ Answer the following questions in the provided markdown file before turning in t
   Block level elements start on a new line and stretch the full width of their parent
 
 - How do inline elements affect the document flow?
-  inline elements do not start on new line and only occupy space bounded by the tage defining the element, they can be nested within block level elements
+  inline elements do not start on new line and only occupy space bounded by the content defining the element, they can be nested within block level elements
 
 - What are the default width and height of a block-level element?
-  the width and height of the parent element
+  the width parent element and the height of the content
 
 - What are the default width and height of an inline element?
   the width and height of its own content
