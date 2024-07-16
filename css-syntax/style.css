@@ -1,0 +1,45 @@
+body {
+  color: 090302;
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+article {
+  padding-left: 16px;
+  padding-right: 16px;
+  border: 1px solid;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+title {
+  font-family: monospace;
+  font-size: 24px;
+}
+
+#html {
+  color: red;
+}
+
+#css {
+  color: green;
+}
+
+#js {
+  color: blue;
+}
+
+/* Select the body and give it a color of #090302 and a font-family of sans-serif.
+Select the h1 and give it a text-align of center.
+Select all article elements and give them:
+A padding-left and padding-right of 16px.
+A border of 1px solid.
+A border-radius of 6px.
+A margin-bottom of 16px.
+Select all elements with the class attribute of "title" and give them a font-family of monospace and a font-size of 24px.
+Select the heading with the id attribute of "html" and give it the color of red.
+Select the heading with the id attribute of "css" and give it the color of green.
+Select the heading with the id attribute of "js" and give it the color of blue. */
