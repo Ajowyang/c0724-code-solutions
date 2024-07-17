@@ -41,13 +41,14 @@ button {
   border: none;
   display: block;
   margin-left: auto;
+  font-size: 10.7px;
 }
 
-label {
-  font-family: AtlasGrotesk, sans-serif;
+form label {
+  font-family: 'Brandon Grotesque', AtlasGrotesk, sans-serif;
   margin-left: 5px;
-  font-size: 8.8px;
-  font-weight: 2000;
+  font-size: 9.5px;
+  font-weight: bold;
   color: black;
 }
 
