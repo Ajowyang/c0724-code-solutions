@@ -1,0 +1,21 @@
+body {
+  display: block;
+}
+
+.container {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  /* max-width: 800px; */
+  display: flex;
+  justify-content: center;
+}
+
+.columnQuarter {
+  display: flex;
+  max-width: 200px;
+  justify-content: center;
+}
