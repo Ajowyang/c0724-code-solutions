@@ -9,6 +9,6 @@ html {
   /* your code here */
   position: fixed;
   top: 50px;
-  left: calc(100% / 3);
-  right: calc(100% / 3);
+  left: 0;
+  right: 0;
 }
