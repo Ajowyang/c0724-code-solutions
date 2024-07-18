@@ -9,13 +9,28 @@ body {
 }
 
 .row {
-  /* max-width: 800px; */
   display: flex;
   justify-content: center;
 }
 
-.columnQuarter {
+.column-quarter {
   display: flex;
-  max-width: 200px;
   justify-content: center;
+  flex-basis: calc(100% / 4);
 }
+
+.column-third {
+  flex-basis: calc(100% / 3);
+}
+
+.column-two-thirds {
+  flex-basis: calc(200% / 3);
+}
+
+.character {
+  width: 100%;
+}
+
+/* div {
+  border: 1px, solid, black;
+} */

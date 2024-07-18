@@ -10,7 +10,7 @@ Answer the following questions in the provided markdown file before turning in t
   row, horizontally
 
 - What are the three primary components of a page layout? (Which helper classes do you need?)
-  header, article, footer
+  column, row, container
 
 - What is the minimum number of **columns** that you should put in a **row**?
   one
