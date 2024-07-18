@@ -9,15 +9,22 @@
 
 .row {
   display: flex;
-  justify-content: space-evenly;
+
+  /* justify-content: space-evenly; */
 }
 
 .column {
-  flex-basis: 25%;
-
-  /* border: 1px, solid, black; */
+  flex-basis: calc(100% / 3);
+  border: 1px, solid, black;
   display: flex;
   flex-direction: column;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.items-center {
   align-items: center;
 }
 
@@ -51,6 +58,6 @@ p {
 }
 
 img {
-  width: calc(100% / 2);
-  height: calc(100% / 2);
+  width: 50%;
+  height: 50%;
 }
