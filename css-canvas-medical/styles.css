@@ -51,7 +51,8 @@
 .buttons-container {
   height: 100%;
   display: flex;
-  margin-bottom: 10px;
+
+  /* margin-bottom: 10px; */
 }
 
 .buttons-container button {
@@ -99,6 +100,10 @@
   color: white;
 }
 
+.hero-container p {
+  margin-bottom: 20px;
+}
+
 .hero-container > img {
   width: 100%;
 }
@@ -108,7 +113,6 @@
 }
 
 .get-started-button {
-  margin-top: 10px;
   background-color: #2a4464;
   color: white;
   width: 140px;
@@ -164,7 +168,7 @@ footer li {
   background-color: #525351;
   padding-top: 90px;
   color: white;
-  padding-bottom: 120px;
+  padding-bottom: 80px;
 }
 
 .white-logo-container {
@@ -189,4 +193,9 @@ address {
 footer ul {
   list-style-type: none;
   margin-top: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
