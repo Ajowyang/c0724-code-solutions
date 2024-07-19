@@ -1,0 +1,192 @@
+.row {
+  display: flex;
+  padding-left: 90px;
+  padding-right: 90px;
+}
+
+.no-padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.column-full {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+}
+
+.column-two-thirds {
+  display: flex;
+  flex-basis: calc(200% / 3);
+  flex-direction: column;
+}
+
+.column-half {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-right {
+  align-items: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.tiempos-font {
+  font-family: 'Tiempos Headline', sans-serif;
+}
+
+.top-row {
+  margin-top: 10px;
+  border-bottom: 1px solid #f6f6f8;
+}
+
+.buttons-container {
+  height: 100%;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.buttons-container button {
+  height: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: none;
+  text-wrap: nowrap;
+}
+
+.white-button {
+  color: #bdbdbd;
+  background-color: white;
+}
+
+.blue-button {
+  background-color: #2a4464;
+  color: white;
+  border-radius: 5px;
+}
+
+.blue-logo-container {
+  display: flex;
+  justify-content: left;
+  width: 130px;
+  margin-top: 10px;
+}
+
+.blue-logo-container img {
+  width: 100%;
+}
+
+.hero-container {
+  flex-basis: 100%;
+  background-image: url('images/hero.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-left: 90px;
+  margin-right: 90px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  padding-left: 60px;
+  color: white;
+}
+
+.hero-container > img {
+  width: 100%;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+.get-started-button {
+  margin-top: 10px;
+  background-color: #2a4464;
+  color: white;
+  width: 140px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+}
+
+.clinicians-prefer-container {
+  color: #757575;
+  background-color: #fafafa;
+  border-bottom: 1px solid #ebebef;
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+.clinicians-prefer-container p {
+  text-align: center;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.location-list {
+  margin-top: 50px;
+  list-style-type: none;
+  font-size: medium;
+}
+
+footer li {
+  margin-bottom: 15px;
+  font-size: small;
+}
+
+.location-list li {
+  margin-bottom: 20px;
+}
+
+.ready-to-learn {
+  color: #808080;
+  margin-bottom: 20px;
+}
+
+.ready-to-learn h2 {
+  font-weight: 100;
+  margin-bottom: 0;
+}
+
+.ready-to-learn p {
+  font-size: small;
+}
+
+.first-footer-row {
+  background-color: #525351;
+  padding-top: 90px;
+  color: white;
+  padding-bottom: 120px;
+}
+
+.white-logo-container {
+  width: 140px;
+  margin-bottom: 30px;
+}
+
+.white-logo-container img {
+  width: 100%;
+}
+
+* {
+  font-family: Avenir, sans-serif;
+}
+
+address {
+  font-style: normal;
+  font-size: small;
+  font-weight: 100;
+}
+
+footer ul {
+  list-style-type: none;
+  margin-top: 0;
+}
