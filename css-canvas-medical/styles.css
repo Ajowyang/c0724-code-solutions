@@ -1,5 +1,8 @@
 .row {
   display: flex;
+}
+
+.px-90 {
   padding-left: 90px;
   padding-right: 90px;
 }
@@ -9,21 +12,20 @@
   padding-right: 0;
 }
 
-.column-full {
+.column {
   display: flex;
   flex-direction: column;
+}
+
+.full {
   flex-basis: 100%;
 }
 
-.column-two-thirds {
-  display: flex;
+.two-thirds {
   flex-basis: calc(200% / 3);
-  flex-direction: column;
 }
 
-.column-half {
-  display: flex;
-  flex-direction: column;
+.half {
   flex-basis: 50%;
 }
 
@@ -46,16 +48,35 @@
 .top-row {
   margin-top: 10px;
   border-bottom: 1px solid #f6f6f8;
+  padding-bottom: 10px;
 }
 
 .buttons-container {
   height: 100%;
   display: flex;
-
-  /* margin-bottom: 10px; */
+  justify-content: right;
 }
 
-.buttons-container button {
+nav li {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-wrap: nowrap;
+}
+
+footer li {
+  margin-bottom: 15px;
+  font-size: small;
+}
+
+.location-list li {
+  margin-bottom: 20px;
+}
+
+.links-container li {
   height: 40px;
   padding-left: 15px;
   padding-right: 15px;
@@ -63,22 +84,29 @@
   text-wrap: nowrap;
 }
 
-.white-button {
-  color: #bdbdbd;
+nav ul {
+  list-style-type: none;
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.white-link {
+  color: #757575;
   background-color: white;
 }
 
-.blue-button {
+.blue-link {
   background-color: #2a4464;
   color: white;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 .blue-logo-container {
   display: flex;
   justify-content: left;
-  width: 130px;
-  margin-top: 10px;
+  width: 135px;
+  margin-top: 16px;
 }
 
 .blue-logo-container img {
@@ -113,11 +141,8 @@
 }
 
 .get-started-button {
-  background-color: #2a4464;
-  color: white;
   width: 140px;
   height: 40px;
-  border-radius: 5px;
   border: none;
 }
 
@@ -139,15 +164,6 @@
   margin-top: 50px;
   list-style-type: none;
   font-size: medium;
-}
-
-footer li {
-  margin-bottom: 15px;
-  font-size: small;
-}
-
-.location-list li {
-  margin-bottom: 20px;
 }
 
 .ready-to-learn {
