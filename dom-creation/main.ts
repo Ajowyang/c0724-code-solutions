@@ -101,7 +101,6 @@ function renderPokemon(pokemon: Pokemon): HTMLDivElement {
   return $colThird;
 }
 
-console.log(renderPokemon(pokedex[3]));
 const $row = document.querySelector('.row');
 if (!$row) throw new Error('The $row query failed');
 for (let i = 0; i < pokedex.length; i++) {
