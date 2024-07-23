@@ -34,5 +34,5 @@ body {
 
 .light-off {
   background-color: #252525;
-  box-shadow: #0c0c0c 0 -10px 0 10px;
+  box-shadow: #0c0c0c 0 -10px 3px 10px;
 }
