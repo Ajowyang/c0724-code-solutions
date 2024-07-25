@@ -12,20 +12,20 @@ $tabContainer.addEventListener('click', (event) => {
   if (!(eventTarget.className === 'tab')) {
     console.log('not an inactive tab!');
     return;
-  } //if what we clicked on was not a tab, return
+  } // if what we clicked on was not a tab, return
   $tabs[currentTabNdx].className = 'tab';
-  //previous current tab loses active class
+  // previous current tab loses active class
   for (let i = 0; i < $tabs.length; i++) {
     if (event.target === $tabs[i]) {
       $tabs[i].className = 'tab active';
-      //new current tab gains active class
+      // new current tab gains active class
       currentTabNdx = i;
-      //update current tab index
+      // update current tab index
     }
   }
-  const eventTargDataView = eventTarget.dataset.view;
+  const eventTargetDataView = eventTarget.dataset.view;
   for (let i = 0; i < $views.length; i++) {
-    if (eventTargDataView != $views[i].getAttribute('data-view')) {
+    if (eventTargetDataView !== $views[i].getAttribute('data-view')) {
       $views[i].className = 'view hidden';
     } else {
       $views[i].className = 'view';

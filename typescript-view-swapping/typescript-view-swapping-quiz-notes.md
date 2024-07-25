@@ -4,6 +4,8 @@
 
 Answer the following questions in the provided markdown file before turning in this exercise:
 
+- can we push it?
+
 - What is the `event.target`?
   the element where the event was fired
 - What is the effect of setting an element to `display: none`?
