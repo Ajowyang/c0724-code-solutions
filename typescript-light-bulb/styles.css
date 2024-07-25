@@ -1,0 +1,38 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background-on {
+  background-color: #fef9f1;
+}
+
+.background-off {
+  background-color: #111;
+}
+
+.lightbulb {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  box-shadow: 0, 12px, chartreuse;
+}
+
+.light-on {
+  background-color: #faea84;
+  box-shadow: #fef5d3 0 0 20px 15px;
+}
+
+.light-off {
+  background-color: #252525;
+  box-shadow: #0c0c0c 0 -10px 3px 10px;
+}
