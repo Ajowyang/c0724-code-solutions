@@ -1,0 +1,29 @@
+html,
+body {
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  font-size: xxx-large;
+}
+
+.underline {
+  border-bottom: 2px solid black;
+}
+
+.limegreen-text {
+  color: limegreen;
+}
+
+.red-text {
+  color: red;
+  border-bottom: 2px solid red;
+}
