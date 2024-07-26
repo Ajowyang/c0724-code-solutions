@@ -6,5 +6,8 @@ function writeTodos() {
 }
 function readTodos() {
   const jsonString = localStorage.getItem('todos-storage');
-  return JSON.parse(jsonString);
+  if (jsonString) {
+    return JSON.parse(jsonString);
+  }
+  return [];
 }
