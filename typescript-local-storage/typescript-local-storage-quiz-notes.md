@@ -5,12 +5,13 @@
 Answer the following questions in the provided markdown file before turning in this exercise:
 
 - How do you store data in `localStorage`?
-
+  use the setItem() method
 - How do you retrieve data from `localStorage`?
-
+  use the getItem() method
 - What data type can `localStorage` save in the browser?
-
+  string
 - When is the safest time to store user data?
+  right after a change is made
 
 ## Notes
 
