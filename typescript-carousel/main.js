@@ -7,7 +7,7 @@ const images = [
   './images/039.png',
 ];
 let currNdx = 0;
-let $displayImage = document.querySelector('.display-image');
+const $displayImage = document.querySelector('.display-image');
 if (!$displayImage) throw new Error('.display-image query failed!');
 $displayImage.setAttribute('src', images[currNdx]);
 const $carouselContainer = document.querySelector('.carousel-container');
@@ -23,43 +23,41 @@ $carouselContainer.addEventListener('click', function (event) {
   console.log(event.target);
   if (event.target === $leftArrow) {
     if (currNdx >= 1) {
-      $circles[currNdx].classList.remove('fa-solid');
-      $circles[currNdx].classList.add('fa-regular');
-      currNdx--;
-      $circles[currNdx].classList.remove('fa-regular');
-      $circles[currNdx].classList.add('fa-solid');
-      $displayImage.setAttribute('src', images[currNdx]);
+      clearCircles();
+      setNdxImageAndDot(currNdx - 1);
+    } else if (currNdx === 0) {
+      clearCircles();
+      setNdxImageAndDot(4);
     }
   }
   if (event.target === $rightArrow) {
     if (currNdx <= 3) {
-      $circles[currNdx].classList.remove('fa-solid');
-      $circles[currNdx].classList.add('fa-regular');
-      currNdx++;
-      $circles[currNdx].classList.remove('fa-regular');
-      $circles[currNdx].classList.add('fa-solid');
-      $displayImage.setAttribute('src', images[currNdx]);
+      clearCircles();
+      setNdxImageAndDot(currNdx + 1);
+    } else if (currNdx === 4) {
+      clearCircles();
+      setNdxImageAndDot(0);
     }
   }
   if (event.target === $circles[0]) {
     clearCircles();
-    getImageAndDotByNdx(0);
+    setNdxImageAndDot(0);
   }
   if (event.target === $circles[1]) {
     clearCircles();
-    getImageAndDotByNdx(1);
+    setNdxImageAndDot(1);
   }
   if (event.target === $circles[2]) {
     clearCircles();
-    getImageAndDotByNdx(2);
+    setNdxImageAndDot(2);
   }
   if (event.target === $circles[3]) {
     clearCircles();
-    getImageAndDotByNdx(3);
+    setNdxImageAndDot(3);
   }
   if (event.target === $circles[4]) {
     clearCircles();
-    getImageAndDotByNdx(4);
+    setNdxImageAndDot(4);
   }
 });
 $displayImage.addEventListener('change', function () {
@@ -82,7 +80,7 @@ function clearCircles() {
     $circles[i].classList.add('fa-regular');
   }
 }
-function getImageAndDotByNdx(index) {
+function setNdxImageAndDot(index) {
   currNdx = index;
   $displayImage.setAttribute('src', images[index]);
   $circles[index].classList.add('fa-solid');

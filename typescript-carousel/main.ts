@@ -33,45 +33,43 @@ $carouselContainer.addEventListener('click', function (event: Event) {
   console.log(event.target);
   if (event.target === $leftArrow) {
     if (currNdx >= 1) {
-      $circles[currNdx].classList.remove('fa-solid');
-      $circles[currNdx].classList.add('fa-regular');
-      currNdx--;
-      $circles[currNdx].classList.remove('fa-regular');
-      $circles[currNdx].classList.add('fa-solid');
-      $displayImage.setAttribute('src', images[currNdx]);
+      clearCircles();
+      setNdxImageAndDot(currNdx - 1);
+    } else if (currNdx === 0) {
+      clearCircles();
+      setNdxImageAndDot(4);
     }
   }
 
   if (event.target === $rightArrow) {
     if (currNdx <= 3) {
-      $circles[currNdx].classList.remove('fa-solid');
-      $circles[currNdx].classList.add('fa-regular');
-      currNdx++;
-      $circles[currNdx].classList.remove('fa-regular');
-      $circles[currNdx].classList.add('fa-solid');
-      $displayImage.setAttribute('src', images[currNdx]);
+      clearCircles();
+      setNdxImageAndDot(currNdx + 1);
+    } else if (currNdx === 4) {
+      clearCircles();
+      setNdxImageAndDot(0);
     }
   }
 
   if (event.target === $circles[0]) {
     clearCircles();
-    getImageAndDotByNdx(0);
+    setNdxImageAndDot(0);
   }
   if (event.target === $circles[1]) {
     clearCircles();
-    getImageAndDotByNdx(1);
+    setNdxImageAndDot(1);
   }
   if (event.target === $circles[2]) {
     clearCircles();
-    getImageAndDotByNdx(2);
+    setNdxImageAndDot(2);
   }
   if (event.target === $circles[3]) {
     clearCircles();
-    getImageAndDotByNdx(3);
+    setNdxImageAndDot(3);
   }
   if (event.target === $circles[4]) {
     clearCircles();
-    getImageAndDotByNdx(4);
+    setNdxImageAndDot(4);
   }
 });
 
@@ -98,7 +96,7 @@ function clearCircles(): void {
   }
 }
 
-function getImageAndDotByNdx(index: number): void {
+function setNdxImageAndDot(index: number): void {
   currNdx = index;
   $displayImage.setAttribute('src', images[index]);
   $circles[index].classList.add('fa-solid');
