@@ -20,7 +20,7 @@ function getRangeReport(start: number, end: number): ResultObject {
   for (let i = start; i <= end; i++) {
     result.range.push(i);
     result.total += i;
-    if (i % 2 === 1) {
+    if (i % 2 === 1 || i % 2 === -1) {
       result.odds.push(i);
     } else {
       result.evens.push(i);
@@ -28,7 +28,6 @@ function getRangeReport(start: number, end: number): ResultObject {
   }
   result.average = result.total / (end - start + 1);
 
-  console.log(result);
   return result;
 }
 
