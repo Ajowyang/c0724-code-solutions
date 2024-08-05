@@ -2,12 +2,12 @@ const $intervalDisplay = document.querySelector(
   '.countdown-display'
 ) as HTMLHeadingElement;
 
-let displayValue = $intervalDisplay.textContent as string;
+let displayValue: number = 4;
 
 const intervalId = setInterval(function () {
-  if (parseInt(displayValue) && parseInt(displayValue) >= 2) {
-    displayValue = (parseInt(displayValue) - 1).toString();
-    $intervalDisplay.textContent = displayValue;
+  if (displayValue >= 2) {
+    displayValue--;
+    $intervalDisplay.textContent = displayValue.toString();
   } else {
     $intervalDisplay.textContent = '~Earth Beeeelooowww Us~';
     clearInterval(intervalId);
