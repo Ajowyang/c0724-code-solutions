@@ -27,67 +27,56 @@ if (!$rightArrow) throw new Error('.fa-chevron-right query failed!');
 
 const $circles = document.querySelectorAll('.fa-circle');
 if (!$circles) throw new Error('.fa-circles query failed!');
-console.log($circles);
 
 $carouselContainer.addEventListener('click', function (event: Event) {
-  console.log(event.target);
   if (event.target === $leftArrow) {
-    if (currNdx >= 1) {
-      clearCircles();
-      setNdxImageAndDot(currNdx - 1);
-    } else if (currNdx === 0) {
-      clearCircles();
-      setNdxImageAndDot(4);
-    }
+    moveLeft();
   }
 
   if (event.target === $rightArrow) {
-    if (currNdx <= 3) {
-      clearCircles();
-      setNdxImageAndDot(currNdx + 1);
-    } else if (currNdx === 4) {
+    moveRight();
+  }
+
+  switch (event.target) {
+    case $circles[0]: {
+      clearInterval(intervalId);
+      intervalId = setInterval(intervalFunc, 3000);
       clearCircles();
       setNdxImageAndDot(0);
+      break;
+    }
+    case $circles[1]: {
+      clearInterval(intervalId);
+      intervalId = setInterval(intervalFunc, 3000);
+      clearCircles();
+      setNdxImageAndDot(1);
+      break;
+    }
+    case $circles[2]: {
+      clearInterval(intervalId);
+      intervalId = setInterval(intervalFunc, 3000);
+      clearCircles();
+      setNdxImageAndDot(2);
+      break;
+    }
+    case $circles[3]: {
+      clearInterval(intervalId);
+      intervalId = setInterval(intervalFunc, 3000);
+      clearCircles();
+      setNdxImageAndDot(3);
+      break;
+    }
+    case $circles[4]: {
+      clearInterval(intervalId);
+      intervalId = setInterval(intervalFunc, 3000);
+      clearCircles();
+      setNdxImageAndDot(4);
+      break;
     }
   }
-
-  if (event.target === $circles[0]) {
-    clearCircles();
-    setNdxImageAndDot(0);
-  }
-  if (event.target === $circles[1]) {
-    clearCircles();
-    setNdxImageAndDot(1);
-  }
-  if (event.target === $circles[2]) {
-    clearCircles();
-    setNdxImageAndDot(2);
-  }
-  if (event.target === $circles[3]) {
-    clearCircles();
-    setNdxImageAndDot(3);
-  }
-  if (event.target === $circles[4]) {
-    clearCircles();
-    setNdxImageAndDot(4);
-  }
 });
 
-$displayImage.addEventListener('change', function () {
-  console.log('change fired');
-});
-
-setInterval(function () {
-  $circles[currNdx].classList.remove('fa-solid');
-  $circles[currNdx].classList.add('fa-regular');
-  currNdx++;
-  if (currNdx === 5) {
-    currNdx = 0;
-  }
-  $displayImage.setAttribute('src', images[currNdx]);
-  $circles[currNdx].classList.remove('fa-regular');
-  $circles[currNdx].classList.add('fa-solid');
-}, 3000);
+let intervalId = setInterval(intervalFunc, 3000);
 
 function clearCircles(): void {
   for (let i = 0; i < $circles.length; i++) {
@@ -101,4 +90,38 @@ function setNdxImageAndDot(index: number): void {
   $displayImage.setAttribute('src', images[index]);
   $circles[index].classList.add('fa-solid');
   $circles[index].classList.remove('fa-regular');
+}
+
+function intervalFunc(): void {
+  clearCircles();
+  $circles[currNdx].classList.add('fa-regular');
+  currNdx++;
+  if (currNdx === 5) {
+    currNdx = 0;
+  }
+  setNdxImageAndDot(currNdx);
+}
+
+function moveRight(): void {
+  clearInterval(intervalId);
+  intervalId = setInterval(intervalFunc, 3000);
+  if (currNdx <= 3) {
+    clearCircles();
+    setNdxImageAndDot(currNdx + 1);
+  } else if (currNdx === 4) {
+    clearCircles();
+    setNdxImageAndDot(0);
+  }
+}
+
+function moveLeft(): void {
+  clearInterval(intervalId);
+  intervalId = setInterval(intervalFunc, 3000);
+  if (currNdx >= 1) {
+    clearCircles();
+    setNdxImageAndDot(currNdx - 1);
+  } else if (currNdx === 0) {
+    clearCircles();
+    setNdxImageAndDot(4);
+  }
 }
