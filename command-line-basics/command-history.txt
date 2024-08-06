@@ -1,0 +1,500 @@
+  209  git add .
+  210  git commit -m "removed css styling that was unnecessary and tested functionality again"
+  211  git push orign issue-1-create-an-entry 
+  212  git push origin issue-1-create-an-entry 
+  213  pwd
+  214  git add ..
+  215  git commit -m "removed css styling that was unnecessary and tested functionality again"
+  216  git push origin issue-1-create-an-entry 
+  217  npx tsc --watch
+  218  git status
+  219  git add .
+  220  git add ..
+  221  git commit -m "used event target properties to access form elements, took off optional on editing property of dataModel, deleted console.logs, specified margin-bottom-15, moved query to bottom of CSS file, added flex-column utility class"
+  222  git push origin issue-1-create-an-entry 
+  223  git add ..
+  224  git status
+  225  git commit -m "removed .column-half and .column-full utility classes to fix styling to matchmobile wireframe" 
+  226  git push orign issue-1-create-an-entry 
+  227  git push origin issue-1-create-an-entry 
+  228  cd ts
+  229  npx tsc --watch
+  230  git add ..
+  231  git status
+  232  got commit -m "updated form part"
+  233  git commit -m "updated form part"
+  234  git add ..
+  235  git commit -m "updated form part"
+  236  git push origin issue-1-create-an-entry 
+  237  ls
+  238  git switch main
+  239  ls
+  240  git pull origin main
+  241  git branch issue-2-view-their-entries
+  242  git switch issue-2-view-their-entries 
+  243  git status
+  244  git add .
+  245  git commit -m "added empty ul to the div[data-view=entries] element in thr HTML"
+  246  git push origin issue-2-view-their-entries 
+  247  git add .
+  248  git commit -m "Created dummy journal entries to the ul and styled them to match the figma example"
+  249  git push origin issue-2-view-their-entries 
+  250  cd ts
+  251  npx tsc --watch
+  252  git status
+  253  git add ..
+  254  git commit -m "defined a function named 'renderEntry' with single parameter 'entry' which generates and returns DOM tree for a single entry that matches the entries created in ul"
+  255  npx tsc --watch
+  256  git add ..
+  257  git commit -m "defined a function named 'renderEntry' with single parameter 'entry' which generates and returns DOM tree for a single entry that matches the entries created in ul, created event listener on 'document' which listens for 'DOMContentLoaded' event and in cb function for that loop through data.entries array and generate DOM tree for each entry in array and append that DOM tree to ul"
+  258  git push origin issue-2-view-their-entries 
+  259  git add ..
+  260  git commit -m "removed example HTML entries from index.html, as user entries are sucessfully being appended to the DOM on page load"
+  261  git push origin issue-2-view-their-entries 
+  262  cd ts
+  263  npx tsc --watch
+  264  git status
+  265  git add ..
+  266  git commit -m "created new function 'toggleNoEntries' which toggles the no entries text to show or hide when function called"
+  267  npx tsc --watch
+  268  git add ..
+  269  git commit -m "created new function 'toggleNoEntries' which toggles the no entries text to show or hide when function called, created new function 'viewSwap' with sigle parameter of which view to show which shows the view whose name was provided as an argument and writes that string to the data.view property of the current data model, added anchor to navbar to show the 'entries' view and created event handler utilizing viewSwap function to do so, updated submit callback to render DOM tree for newly submitted entry object using 'renderEntry' function, prepend new DOM tree to unordered list, use 'viewSwap' function to show 'entries' view, conditionally use toggleNoEntries to remove no entries text as needed, updated 'DOMContentLoaded' cb function to use 'viewSwap' function to show view which was displayed prior to page refresh "
+  270  npx tsc --watch
+  271  git add ..
+  272  npx tsc --watch
+  273  git add ..
+  274  git commit -m "created new function 'toggleNoEntries' which toggles the no entries text to show or hide when function called, created new function 'viewSwap' with sigle parameter of which view to show which shows the view whose name was provided as an argument and writes that string to the data.view property of the current data model, added anchor to navbar to show the 'entries' view and created event handler utilizing viewSwap function to do so, updated submit callback to render DOM tree for newly submitted entry object using 'renderEntry' function, prepend new DOM tree to unordered list, use 'viewSwap' function to show 'entries' view, conditionally use toggleNoEntries to remove no entries text as needed, updated 'DOMContentLoaded' cb function to use 'viewSwap' function to show view which was displayed prior to page refresh, conditionally uses the 'toggleEntries' function to show or remove the no entries text as needed" 
+  275  git commit -m "created new function 'toggleNoEntries' which toggles the no entries text to show or hide when function called, created new function 'viewSwap' with sigle parameter of which view to show which shows the view whose name was provided as an argument and writes that string to the data.view property of the current data model, added anchor to navbar to show the 'entries' view and created event handler utilizing viewSwap function to do so, updated submit callback to render DOM tree for newly submitted entry object using 'renderEntry' function, prepend new DOM tree to unordered list, use 'viewSwap' function to show 'entries' view, conditionally use toggleNoEntries to remove no entries text as needed, updated 'DOMContentLoaded' cb function to use 'viewSwap' function to show view which was displayed prior to page refresh, conditionally uses the 'toggleEntries' function to show or remove the no entries text as needed" 
+  276  git commit -m "created new function 'toggleNoEntries' which toggles the no entries text to show or hide when function called, created new function 'viewSwap' with sigle parameter of which view to show which shows the view whose name was provided as an argument and writes that string to the data.view property of the current data model, added anchor to navbar to show the 'entries' view and created event handler utilizing viewSwap function to do so, updated submit callback to render DOM tree for newly submitted entry object using 'renderEntry' function, prepend new DOM tree to unordered list, use 'viewSwap' function to show 'entries' view, conditionally use toggleNoEntries to remove no entries text as needed, updated 'DOMContentLoaded' cb function to use 'viewSwap' function to show view which was displayed prior to page refresh, conditionally uses the 'toggleEntries' function to show or remove the no entries text as needed" 
+  277  npx tsc --watch
+  278  git commit -m "created new function 'toggleNoEntries' which toggles the no entries text to show or hide when function called, created new function 'viewSwap' with sigle parameter of which view to show which shows the view whose name was provided as an argument and writes that string to the data.view property of the current data model, added anchor to navbar to show the 'entries' view and created event handler utilizing viewSwap function to do so, updated submit callback to render DOM tree for newly submitted entry object using 'renderEntry' function, prepend new DOM tree to unordered list, use 'viewSwap' function to show 'entries' view, conditionally use toggleNoEntries to remove no entries text as needed, updated 'DOMContentLoaded' cb function to use 'viewSwap' function to show view which was displayed prior to page refresh, conditionally uses the 'toggleEntries' function to show or remove the no entries text as needed" 
+  279  git add ..
+  280  git commit -m "created new function 'toggleNoEntries' which toggles the no entries text to show or hide when function called, created new function 'viewSwap' with sigle parameter of which view to show which shows the view whose name was provided as an argument and writes that string to the data.view property of the current data model, added anchor to navbar to show the 'entries' view and created event handler utilizing viewSwap function to do so, updated submit callback to render DOM tree for newly submitted entry object using 'renderEntry' function, prepend new DOM tree to unordered list, use 'viewSwap' function to show 'entries' view, conditionally use toggleNoEntries to remove no entries text as needed, updated 'DOMContentLoaded' cb function to use 'viewSwap' function to show view which was displayed prior to page refresh, conditionally uses the 'toggleEntries' function to show or remove the no entries text as needed" 
+  281  git push origin issue-2-view-their-entries 
+  282  npx tsc --watch
+  283  git add ..
+  284  git commit -m "fixed bug with 'no entries' message"
+  285  git push origin issue-2-view-their-entries 
+  286  npx tsc --watch
+  287  git status
+  288  git add ..
+  289  git commit -m "made fixes: moved conditional code into 'toggleNoEntries' function, reused toggleNoEntries function instead of checking for data.entries length, changed prepend to append, fixed if else statements, took out event.preventDefault()'s"
+  290  npx tsc --watch
+  291  git status
+  292  git add ..
+  293  git commit -m "made fixes: moved conditional code into 'toggleNoEntries' function, reused toggleNoEntries function instead of checking for data.entries length, changed prepend to append, fixed if else statements, took out event.preventDefault()'s"
+  294  git push origin issue-2-view-their-entries 
+  295  npx tsc --watch
+  296  git add ..
+  297  git commit -m "made fixes: moved conditional code into 'toggleNoEntries' function, reused toggleNoEntries function instead of checking for data.entries length, changed prepend to append, fixed if else statements, took out event.preventDefault()'s"
+  298  git add ..
+  299  npx tsc --watch
+  300  git status
+  301  git add ..
+  302  git status
+  303  git push origin main issue-2-view-their-entries 
+  304  git commit -m "made fixes: moved conditional code into 'toggleNoEntries' function, reused toggleNoEntries function instead of checking for data.entries length, changed prepend to append, fixed if else statements, took out event.preventDefault()'s"
+  305  git push origin main issue-2-view-their-entries 
+  306  npx tsc --watch
+  307  git status
+  308  git add ..
+  309  git commit -m "assigned viewName to data.view outside of if else if statement and added conditional to ensire viewName can only be 'entries' or 'entry-form' for viewSwap function to execute code"
+  310  git push origin issue-2-view-their-entries 
+  311  npx tsc --wat h
+  312  npx tsc --watch
+  313  git add .
+  314  git status
+  315  git commit -m "removed conditional in submit event listener, removed excessive conditional in viewSwap function, removed console.log in data.js, removed commented out object in submit cb function"
+  316  git push origin issue-2-view-their-entries 
+  317  git switch main
+  318  git pull origin main
+  319  git branch --list
+  320  git checkout -b issue-2-edit-an-entry
+  321  cd ts
+  322  npx tsc --watch
+  323  git status
+  324  git add ..
+  325  git commit -m "updated 'renderEntry' function to add pencil icon and added data-entry-id to li being rendered, added event listener to ul for pencil icon click which switches view to form, assigns correct objec to data.editing, populates entry form with entry's values, and updates title of form to 'Edit Entry', updated entry form submit handler to account for edits"
+  326  npx tsc --watch
+  327  git add ..
+  328  git commit -m "updated 'renderEntry' function to add pencil icon and added data-entry-id to li being rendered, added event listener to ul for pencil icon click which switches view to form, assigns correct objec to data.editing, populates entry form with entry's values, and updates title of form to 'Edit Entry', updated entry form submit handler to account for edits"
+  329  git branch --list
+  330  npx tsc --watch
+  331  git status
+  332  git add ..
+  333  git status
+  334  git branch -m issue-3-edit-an-entry
+  335  git status
+  336  git commit -m "updated new button event listener to reset the entry form"
+  337  git push origin issue-3-edit-an-entry 
+  338  npx tsc --watch
+  339  git status
+  340  git add ..
+  341  git commit -m "fixed submit event handler, entries now update without needing to refresh page"
+  342  git push origin issue-3-edit-an-entry 
+  343  npx tsc --watch
+  344  git status
+  345  git add ..
+  346  git commit -m "condensed reused code, removed console.logs, and refactored guard clause"
+  347  git push origin issue-3-edit-an-entry 
+  348  git pull origin main
+  349  git switch main
+  350  git pull origin main
+  351  git branch issue-4-delete-an-entry
+  352  git switch issue-4-delete-an-entry 
+  353  git status
+  354  ls
+  355  npx tsc --watch
+  356  git add ..
+  357  git status
+  358  git commit -m "Add a button to the entry form with the text **Delete Entry** which is only visible when an entry is currently being edited"
+  359  git push origin issue-4-delete-an-entry 
+  360  npx tsc --watch
+  361  git status
+  362  git add ..
+  363  git commit -m "added confirmation modal on clicking 'Delete Entry', added cancel button that hides modal on click, added confirm button that removes corresponding entry object from data model entry array and removes li element from DOM, toggles no entry if needed, hides modal, and swaps to Entries view"
+  364  git status
+  365  git add ..
+  366  git commit -m "added required to input fields for title and photo URL"
+  367  git push origin issue-4-delete-an-entry 
+  368  git pull origin main
+  369  npx tsc --watch
+  370  git status
+  371  git add
+  372  git add .
+  373  git push origin main
+  374  git commit -m "added some styling"
+  375  git push origin main
+  376  git pull origin main
+  377  git add
+  378  git add .
+  379  git status
+  380  git commit -m "added modal"
+  381  git add .
+  382  git commit -m "added modal"
+  383  git push origin main
+  384  git pull origin main
+  385  npx tsc --watch
+  386  git status
+  387  git add .
+  388  git commit -m "worked on show/hide modal functionality"
+  389  git push origin main
+  390  git pull origin main
+  391  npx tsc --watch
+  392  git push origin main
+  393  git add .
+  394  git commit -m "we can get select value >:D"
+  395  npx tsc --watch
+  396  git add .
+  397  git commit -m "we can get select value >:D"
+  398  npx tsc --watch
+  399  git add .
+  400  git commit -m "we can get select value >:D"
+  401  git push origin main
+  402  git pull origin main
+  403  git pull origin main
+  404  git status
+  405  git pull origin main
+  406  npx tsc --watch
+  407  git status
+  408  git add .
+  409  git commit -m "started on modal form submission"
+  410  git push origin main
+  411  git pull origin main
+  412  npx tsc --watch
+  413  git status
+  414  git add .
+  415  git commit -m "we got the data"
+  416  npx tsc --watch
+  417  git add .
+  418  git commit -m "we got the data"
+  419  git push origin main
+  420  gill origin main
+  421  git pull origin main
+  422  npx tsc --watch
+  423  git add .
+  424  git commit -m "trying to create buttons for action row but not working"
+  425  git push origin main
+  426  npx tsc --watch
+  427  git add ..
+  428  git add .
+  429  git status
+  430  git commit -m "removed console.logs and event.preventDefault()"
+  431  git add .
+  432  git commit -m "removed console.logs and event.preventDefault()"
+  433  git push origin issue-4-delete-an-entry 
+  434  git pull origin main
+  435  git branch main
+  436  git switch main
+  437  git branch --list
+  438  ls
+  439  cd ..
+  440  ls
+  441  cd /workspaces
+  442  ls
+  443  git clone git@github.com:Ajowyang/week-planner.git
+  444  cd week-planner/
+  445  npm install
+  446  git branch --list
+  447  ls
+  448  code .
+  449  git status
+  450  git branch practice-interview-problem
+  451  git branch -delete practice-interview-problem 
+  452  git branch --delete practice-interview-problem 
+  453  git switch main
+  454  git status
+  455  git branch practice-interview-challenge
+  456  git switch practice-interview-challenge 
+  457  cd practice-interview-challenge/
+  458  npx tsc --watch
+  459  git add .
+  460  git commit -m "defined getRangeReport function which creates and returns object with desired properties"
+  461  git add .
+  462  git status
+  463  ls
+  464  ls
+  465  git branch --list
+  466  ls
+  467  pw
+  468  pwd
+  469  cd ..
+  470  ls
+  471  cd practice-interview-challenge/
+  472  ls
+  473  git status
+  474  git add .
+  475  git commit -m "defined getRangeReport function which creates and returns object with desired properties"
+  476  git push origin practice-interview-challenge practice-interview-challenge 
+  477  git status
+  478  git push origin practice-interview-challenge practice-interview-challenge 
+  479  git branch practice-interview-challenge 
+  480  git switch practice-interview-challenge 
+  481  cd ..
+  482  git push origin practice-interview-challenge 
+  483  cd practice-interview-challenge/
+  484  npx tsc --watch
+  485  git add .
+  486  cd ..
+  487  git status
+  488  git commit -m "fixed if conditional to account for negative numbers"
+  489  git push origin practice-interview-challenge 
+  490  cd ..
+  491  cd c0724-code-solutions/
+  492  ls
+  493  git branch --list
+  494  git switch main
+  495  git pull origin main
+  496  git branch practice-exercises
+  497  git branch typescript-timers
+  498  git switch typescript-timers 
+  499  cd typescript-timers/
+  500  cd typescript-timers/
+  501  npx tsc --watch
+  502  git add .
+  503  git commit -m "completed typescript-timers -Andrew Owyang"
+  504  git add .
+  505  npx tsc --watch
+  506  cd ..
+  507  cd typescript-timers/
+  508  npx tsc --watch
+  509  git status
+  510  git add .
+  511  git commit -m "completed typescript-timers -Andrew Owyang"
+  512  git push origin typescript-timers 
+  513  npx tsc --watch
+  514  cd ..
+  515  ;s
+  516  ls
+  517  git add typescript-timers/
+  518  git commit -m "answered quiz questions, created variable in interval.ts to keep track of countdown display text"
+  519  git push origin typescript-timers 
+  520  git switch main
+  521  git branch typescript-carousel
+  522  git switch typescript-carousel 
+  523  cd typescript-carousel/
+  524  npx tsc --watch
+  525  git status
+  526  ls
+  527  git add .
+  528  git commit -m "completed typescript carousel-Andrew Owyang"
+  529  npx tsc --watch
+  530  ls
+  531  pwd
+  532  cd ..
+  533  ls
+  534  cd typescript-carousel/
+  535  ls
+  536  npx tsc --watch
+  537  git status
+  538  git add .
+  539  git commit -m "completed typescript carousel-Andrew Owyang"
+  540  npx tsc --watch
+  541  git status
+  542  git add .
+  543  git commit -m "completed typescript carousel-Andrew Owyang"
+  544  git push origin typescript-carousel 
+  545  git switch main
+  546  git switch typescript-timers
+  547  git branch --list
+  548  cd ..
+  549  git switch typescript-timers 
+  550  npx tsc --watch
+  551  cd typescript-timers/
+  552  npx tsc --watch
+  553  git status
+  554  git add .
+  555  git commit -m "no longer using textcontent to determine what count I am on"
+  556  git push origin typescript-timers 
+  557  git switch main
+  558  cd ..
+  559  git switch css-canvas-medical 
+  560  git add css-canvas-medical/
+  561  git status
+  562  git commit -m "uploaded screenshots to github"
+  563  git add css-canvas-medical
+  564  git status
+  565  git commit -m "uploaded screenshots to github"
+  566  git push origin css-canvas-medical 
+  567  git switch main
+  568  git branch typescript-destructuring
+  569  cd typescript-destructuring/
+  570  npx tsc --watch
+  571  git status
+  572  git switch typescript-destructuring 
+  573  git status
+  574  git add .
+  575  git commit -m "completed typescript-destructuring -Andrew Owyang"
+  576  git push origin typescript-destructuring 
+  577  cd ..
+  578  git switch main
+  579  git switch typescript-carousel 
+  580  cd typescript-carousel/
+  581  npx tsc --watch
+  582  git status
+  583  git add .
+  584  git commit -m "removed console logs, reset timer upon arrow or dot click, created moveRight and moveLeft functions, change if statements to switch statement"
+  585  git push origin typescript-carousel 
+  586  CD ..
+  587  cd ..
+  588  git switch main
+  589  git branch typescript-operators
+  590  git switch typescript-operators 
+  591  cd typescript-operators/
+  592  tps tsc --watch
+  593  npx tsc --watch
+  594  ls
+  595  git add .
+  596  git commit -m "
+  597  git commit -m "completed typescript-operators-Andrew Owyang"
+  598  git push origin typescript-operators 
+  599  c d..
+  600  cd ..
+  601  git switch main
+  602  git pull origin main
+  603  git switch typescript-operators 
+  604  cd typescript-operators/
+  605  npx tsc --watch
+  606  git add .
+  607  git commit -m "logs onlu if truthy"
+  608  git push origin typescript-operators 
+  609  git switch main
+  610  git switch main
+  611  cd ..
+  612  git branch array-methods
+  613  git switch array-methods 
+  614  npx tsc --watch
+  615  cd array-methods/
+  616  npx tsc --watch
+  617  git add .
+  618  git commit -m 'completed array-methods -Andrew Owyang'
+  619  npx tsc --watch
+  620  ls
+  621  cd ..
+  622  cd array-methods/
+  623  npx tsc --watch
+  624  git add .
+  625  git commit -m 'completed array-methods -Andrew Owyang'
+  626  ls
+  627  cd ..
+  628  cd array-methods/
+  629  npx tsc --watch
+  630  git add .
+  631  git commit -m 'completed array-methods -Andrew Owyang'
+  632  npx tsc --watch
+  633  ls
+  634  cd ..
+  635  cd array-methods/
+  636  npx tsc --watch
+  637  git add .
+  638  git commit -m 'completed array-methods -Andrew Owyang'
+  639  cd ..
+  640  cd array-methods/
+  641  npx tsc --watch
+  642  git add .
+  643  git commit -m 'completed array-methods -Andrew Owyang'
+  644  git push origin array-methods 
+  645  cd ..
+  646  git switch main
+  647  git switch typescript-carousel 
+  648  npx tsc --watch
+  649  cd typescript-carousel/
+  650  npx tsx --watch
+  651  npx tsc --watch
+  652  cd ..
+  653  git switch main
+  654  git add typescript-carousel/
+  655  git commit -m "took out clearCircles call"
+  656  git switch main
+  657  git branch command-line-basics
+  658  cd command-line-basics/
+  659  man man
+  660  man cat
+  661  cat laziness.txt impatience.txt hubris.txt 
+  662  man ls
+  663  ls
+  664  ls -aF
+  665  ls -af lfz-staff/
+  666  ls -af lfz-staff > lfz-staff/contents.txt
+  667  cat lfz-staff/contents.txt 
+  668  pwd
+  669  pwd > i-was-here.txt
+  670  ls
+  671  cat i-was-here.txt 
+  672  man echo
+  673  echo 'Hello, World!'
+  674  echo 'Hello, World!' > hello.txt
+  675  ls
+  676  cat hello.txt 
+  677  touch tag-youre-it.txt
+  678  touch snoot/boop.txt
+  679  ls snoot
+  680  man mkdir
+  681  mkdir parent
+  682  ls
+  683  mkdir -p parent/child/grandchild
+  684  ls parent/
+  685  ls parent/child/
+  686  man touch
+  687  touch parent/child/grandchild/.gitkeep
+  688  ls parent/child/grandchild/
+  689  ls
+  690  ls parent/
+  691  ls parent/child/
+  692  ls parent/child/grandchild/
+  693  ls -a parent/child/grandchild/
+  694  man mv
+  695  man touch
+  696  rm lol.txt
+  697  ls
+  698  rm -r kill-me/
+  699  ls
+  700  man cp
+  701  man cp
+  702  cp and-then.txt no-and-then.txt
+  703  ls
+  704  cat and-then.txt 
+  705  cat no-and-then.txt 
+  706  man history
+  707  history
+  708  history > command-history.txt
