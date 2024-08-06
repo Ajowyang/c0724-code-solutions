@@ -77,7 +77,7 @@ function setNdxImageAndDot(index) {
   $circles[index].classList.remove('fa-regular');
 }
 function intervalFunc() {
-  clearCircles();
+  $circles[currNdx].classList.remove('fa-solid');
   $circles[currNdx].classList.add('fa-regular');
   currNdx++;
   if (currNdx === 5) {
