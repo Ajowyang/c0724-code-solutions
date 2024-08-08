@@ -1,7 +1,8 @@
-interface Pokemon {
+interface User {
+  id: number;
   name: string;
-  height: number;
-  weight: number;
+  username: string;
+  email: string;
 }
 
 async function fetchData(): Promise<void> {
@@ -12,7 +13,7 @@ async function fetchData(): Promise<void> {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
-    const data = (await response.json()) as Pokemon;
+    const data = (await response.json()) as User;
     console.log(data);
   } catch (error) {
     console.log('Error:', error);
