@@ -25,47 +25,15 @@ $carouselContainer.addEventListener('click', function (event) {
   if (event.target === $rightArrow) {
     moveRight();
   }
-  switch (event.target) {
-    case $circles[0]: {
-      clearInterval(intervalId);
-      intervalId = setInterval(intervalFunc, 3000);
-      $circles[currNdx].classList.remove('fa-solid');
-      $circles[currNdx].classList.add('fa-regular');
-      setNdxImageAndDot(0);
-      break;
-    }
-    case $circles[1]: {
-      clearInterval(intervalId);
-      intervalId = setInterval(intervalFunc, 3000);
-      $circles[currNdx].classList.remove('fa-solid');
-      $circles[currNdx].classList.add('fa-regular');
-      setNdxImageAndDot(1);
-      break;
-    }
-    case $circles[2]: {
-      clearInterval(intervalId);
-      intervalId = setInterval(intervalFunc, 3000);
-      $circles[currNdx].classList.remove('fa-solid');
-      $circles[currNdx].classList.add('fa-regular');
-      setNdxImageAndDot(2);
-      break;
-    }
-    case $circles[3]: {
-      clearInterval(intervalId);
-      intervalId = setInterval(intervalFunc, 3000);
-      $circles[currNdx].classList.remove('fa-solid');
-      $circles[currNdx].classList.add('fa-regular');
-      setNdxImageAndDot(3);
-      break;
-    }
-    case $circles[4]: {
-      clearInterval(intervalId);
-      intervalId = setInterval(intervalFunc, 3000);
-      $circles[currNdx].classList.remove('fa-solid');
-      $circles[currNdx].classList.add('fa-regular');
-      setNdxImageAndDot(4);
-      break;
-    }
+  let element = event.target;
+  if (element.classList.contains('fa-circle')) {
+    let newNdx = parseInt(element.className.split(' ')[0].charAt(5));
+    $circles[currNdx].classList.remove('fa-solid');
+    $circles[currNdx].classList.add('fa-regular');
+    currNdx = newNdx;
+    setNdxImageAndDot(currNdx);
+    clearInterval(intervalId);
+    intervalId = setInterval(intervalFunc, 3000);
   }
 });
 let intervalId = setInterval(intervalFunc, 3000);
@@ -85,8 +53,6 @@ function intervalFunc() {
   setNdxImageAndDot(currNdx);
 }
 function moveRight() {
-  clearInterval(intervalId);
-  intervalId = setInterval(intervalFunc, 3000);
   if (currNdx <= 3) {
     $circles[currNdx].classList.remove('fa-solid');
     $circles[currNdx].classList.add('fa-regular');
@@ -96,10 +62,10 @@ function moveRight() {
     $circles[currNdx].classList.add('fa-regular');
     setNdxImageAndDot(0);
   }
-}
-function moveLeft() {
   clearInterval(intervalId);
   intervalId = setInterval(intervalFunc, 3000);
+}
+function moveLeft() {
   if (currNdx >= 1) {
     $circles[currNdx].classList.remove('fa-solid');
     $circles[currNdx].classList.add('fa-regular');
@@ -109,4 +75,6 @@ function moveLeft() {
     $circles[currNdx].classList.add('fa-regular');
     setNdxImageAndDot(4);
   }
+  clearInterval(intervalId);
+  intervalId = setInterval(intervalFunc, 3000);
 }
