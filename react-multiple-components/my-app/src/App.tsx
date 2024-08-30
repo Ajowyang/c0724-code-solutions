@@ -16,7 +16,7 @@ function App() {
 
   return (
     <>
-      <RotatingBanner>{items[0]}</RotatingBanner>
+      <RotatingBanner itemList={items}></RotatingBanner>
     </>
   );
 }
