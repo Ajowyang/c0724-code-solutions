@@ -1,45 +1,78 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 
 // type Props = {
 //   itemList: string[];
 // };
 
-export function RotatingBanner() {
-  // const [index, setIndex] = useState(0);
+type rotatingBannerProps = {
+  items: string[];
+};
+
+export function RotatingBanner({ items }: rotatingBannerProps) {
+  const [index, setIndex] = useState(0);
 
   return (
-    <div>
-      <Title></Title>
-      <PrevButton></PrevButton>
-      <Indicators></Indicators>
-      <NextButton></NextButton>
+    <div className="flex flex-col align-center items-center">
+      <Title titleStr={items[index]}></Title>
+      <PrevButton
+        onPrevClick={() => {
+          setIndex((index - 1 + items.length) % items.length);
+          console.log(index);
+        }}></PrevButton>
+      <Indicators length={items.length} selectedNdx={index}></Indicators>
+      <NextButton
+        onNextClick={() => {
+          setIndex((index + 1) % items.length);
+          console.log('fru');
+        }}></NextButton>
     </div>
   );
 }
 
 type TitleProps = {
-  title: string;
+  titleStr: string;
 };
-function Title({ title }: TitleProps) {
-  return <div>{title}</div>;
-}
-function PrevButton() {
-  return <button>Prev</button>;
+function Title({ titleStr }: TitleProps) {
+  return <h1 className="text-4xl">{titleStr}</h1>;
 }
 
-function NextButton() {
-  return <button>Next</button>;
-}
-
-function Indicators() {
+type PrevProps = {
+  onPrevClick: () => void;
+};
+function PrevButton({ onPrevClick }: PrevProps) {
   return (
-    <ul>
-      <button>0</button>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>4</button>
-      <button>5</button>
-    </ul>
+    <button className="border border-black h-16 w-32" onClick={onPrevClick}>
+      Prev
+    </button>
   );
+}
+
+type NextProps = {
+  onNextClick: () => void;
+};
+function NextButton({ onNextClick }: NextProps) {
+  return (
+    <button className="border border-black h-16 w-32" onClick={onNextClick}>
+      Next
+    </button>
+  );
+}
+
+type IndicatorsProps = {
+  length: number;
+  selectedNdx: number;
+};
+function Indicators({ length, selectedNdx }: IndicatorsProps) {
+  const indicators = [];
+  for (let i = 0; i < length; i++) {
+    indicators.push(
+      <button
+        className="border border-black w-16 h-16 text-2xl"
+        style={{ backgroundColor: i === selectedNdx ? '#aaf' : undefined }}>
+        {i}
+      </button>
+    );
+  }
+
+  return <div>{indicators}</div>;
 }
