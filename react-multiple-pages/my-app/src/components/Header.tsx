@@ -1,20 +1,18 @@
-type Props = {
-  onNavigate: (page: string) => void;
-};
-export function Header({ onNavigate }: Props) {
+import { Link } from 'react-router-dom';
+
+// type Props = {
+//   onNavigate: (page: string) => void;
+// };
+export function Header() {
   return (
     <div>
       <nav className="px-4 text-white bg-gray-900">
         <ul>
           <li className="inline-block py-2 px-4">
-            <div onClick={() => onNavigate('about')} className="text-white">
-              About
-            </div>
+            <Link to="/about">About</Link>
           </li>
           <li className="inline-block py-2 px-4">
-            <div onClick={() => onNavigate('dashboard')} className="text-white">
-              Dashboard
-            </div>
+            <Link to="/">Dashboard</Link>
           </li>
         </ul>
       </nav>

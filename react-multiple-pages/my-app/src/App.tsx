@@ -1,32 +1,21 @@
-import { useState } from 'react';
-import { About } from './pages/About';
 import { Dashboard } from './pages/Dashboard';
 import { Header } from './components/Header';
-import { NotFound } from './pages/NotFound';
+
 import { Details } from './pages/Details';
+import { About } from './pages/About';
 import { Routes, Route } from 'react-router-dom';
+import { NotFound } from './pages/NotFound';
 
 export function App() {
-  const [page, setPage] = useState('dashboard');
-  const [itemId, setItemId] = useState<number>();
-
-  function handleDetails(itemId: number): void {
-    setPage('details');
-    setItemId(itemId);
-  }
-
   return (
     <>
-      <Header onNavigate={(page) => setPage(page)} />
-      {page === 'dashboard' && <Dashboard onDetails={handleDetails} />}
-      {page === 'details' && (
-        <Details itemId={itemId} onDone={() => setPage('dashboard')} />
-      )}
-      {page === 'about' && <About />}
-      {page === undefined && <NotFound onDone={() => setPage('dashboard')} />}
-
+      <Header />
       <Routes>
-        <Route path="/"></Route>
+        <Route path="/" element={<Header />} />
+        <Route index element={<Dashboard />} />
+        <Route path="/details/:itemId" element={<Details></Details>}></Route>
+        <Route path="/about" element={<About></About>} />
+        <Route path="*" element={<NotFound></NotFound>} />
       </Routes>
     </>
   );
