@@ -17,7 +17,7 @@ export function Carousel({ images }: CarouselProps) {
     <div className="flex flex-col">
       <div className="flex items-center justify-center">
         <Arrow
-          handleClick={() =>
+          onClick={() =>
             setActiveImgId((activeImgId - 1 + images.length) % images.length)
           }
           direction="left"
@@ -27,12 +27,15 @@ export function Carousel({ images }: CarouselProps) {
           imgAlt={images[activeImgId].alt}
         />
         <Arrow
-          handleClick={() => setActiveImgId((activeImgId + 1) % images.length)}
+          onClick={() => setActiveImgId((activeImgId + 1) % images.length)}
           direction="right"
         />
       </div>
       <div className="flex items-center justify-center my-4">
-        <Dots filledNdx={activeImgId} length={images.length}></Dots>
+        <Dots
+          filledNdx={activeImgId}
+          length={images.length}
+          onClick={setActiveImgId}></Dots>
       </div>
     </div>
   );
@@ -52,11 +55,11 @@ function ImageCard({ imgUrl, imgAlt }: ImageCardProps) {
 
 type ArrowProps = {
   direction: string;
-  handleClick: () => void;
+  onClick: () => void;
 };
-function Arrow({ direction, handleClick }: ArrowProps) {
+function Arrow({ direction, onClick }: ArrowProps) {
   return (
-    <div onClick={handleClick}>
+    <div onClick={onClick}>
       {direction === 'right' ? <FaChevronRight className="text-4xl" /> : null}
       {direction === 'left' ? <FaChevronLeft className="text-4xl" /> : null}
     </div>
@@ -66,14 +69,15 @@ function Arrow({ direction, handleClick }: ArrowProps) {
 type DotsProps = {
   length: number;
   filledNdx: number;
+  onClick: (i: number) => void;
 };
-function Dots({ length, filledNdx }: DotsProps) {
+function Dots({ length, filledNdx, onClick }: DotsProps) {
   const dots = [];
   for (let i = 0; i < length; i++) {
     if (i === filledNdx) {
-      dots.push(<GoDotFill className="text-3xl" />);
+      dots.push(<GoDotFill className="text-3xl" id={i.toString()} />);
     } else {
-      dots.push(<GoDot className="text-3xl" />);
+      dots.push(<GoDot className="text-3xl" onClick={() => onClick(i)} />);
     }
   }
   return dots;
