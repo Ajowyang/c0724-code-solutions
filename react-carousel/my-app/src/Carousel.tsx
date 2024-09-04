@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FaChevronRight, FaChevronLeft } from 'react-icons/fa';
 import { GoDot, GoDotFill } from 'react-icons/go';
 
@@ -12,6 +12,15 @@ type CarouselProps = {
 
 export function Carousel({ images }: CarouselProps) {
   const [activeImgId, setActiveImgId] = useState(0);
+  // const [timerId, setTimerId] = useState<NodeJS.Timeout>();
+
+  useEffect(() => {
+    const id = setTimeout(() => {
+      setActiveImgId((activeImgId + 1) % images.length);
+    }, 3000);
+    // setTimerId(id);
+    return () => clearTimeout(id);
+  }, [activeImgId, images]);
 
   return (
     <div className="flex flex-col">
@@ -75,9 +84,15 @@ function Dots({ length, filledNdx, onClick }: DotsProps) {
   const dots = [];
   for (let i = 0; i < length; i++) {
     if (i === filledNdx) {
-      dots.push(<GoDotFill className="text-3xl" id={i.toString()} />);
+      dots.push(<GoDotFill className="text-3xl" key={i.toString()} />);
     } else {
-      dots.push(<GoDot className="text-3xl" onClick={() => onClick(i)} />);
+      dots.push(
+        <GoDot
+          className="text-3xl"
+          key={i.toString()}
+          onClick={() => onClick(i)}
+        />
+      );
     }
   }
   return dots;
