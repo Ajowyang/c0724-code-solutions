@@ -9,14 +9,13 @@ import { NotFound } from './pages/NotFound';
 export function App() {
   return (
     <>
-      <Header />
       <Routes>
         <Route path="/" element={<Header />}>
           <Route index element={<Dashboard />} />
+          <Route path="/details/:itemId" element={<Details />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
-        <Route path="/details/:itemId" element={<Details></Details>}></Route>
-        <Route path="/about" element={<About></About>} />
-        <Route path="*" element={<NotFound></NotFound>} />
       </Routes>
     </>
   );
