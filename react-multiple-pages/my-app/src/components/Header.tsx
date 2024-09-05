@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 // type Props = {
 //   onNavigate: (page: string) => void;
@@ -16,7 +16,7 @@ export function Header() {
           </li>
         </ul>
       </nav>
-      {/* Page content goes here */}
+      <Outlet />
     </div>
   );
 }

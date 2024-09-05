@@ -26,7 +26,11 @@ export function Dashboard() {
   }
 
   if (error) {
-    return <Link to="/*"></Link>;
+    return (
+      <div>
+        Error! {error instanceof Error ? error.message : 'Unknown Error'}
+      </div>
+    );
   }
 
   return (

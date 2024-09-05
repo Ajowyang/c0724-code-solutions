@@ -11,8 +11,9 @@ export function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Header />} />
-        <Route index element={<Dashboard />} />
+        <Route path="/" element={<Header />}>
+          <Route index element={<Dashboard />} />
+        </Route>
         <Route path="/details/:itemId" element={<Details></Details>}></Route>
         <Route path="/about" element={<About></About>} />
         <Route path="*" element={<NotFound></NotFound>} />
