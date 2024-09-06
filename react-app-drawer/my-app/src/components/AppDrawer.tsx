@@ -12,7 +12,7 @@ export function AppDrawer({ menuItems }: Props) {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <div className="flex">
+    <div className="flex w-full">
       <div className="flex flex-col min-h-full  border pl-2 pr-4 mr-3 shadow-2xl">
         <GiHamburgerMenu
           className="text-2xl my-4"
