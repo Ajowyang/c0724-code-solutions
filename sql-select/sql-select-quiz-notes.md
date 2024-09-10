@@ -14,6 +14,7 @@ Answer the following questions in the provided markdown file before turning in t
   use a 'where' clause with the 'column' = "value" for what you want to filter for
 
 - What are the benefits of formatting your SQL?
+  it is easy to work with
 
 - What are four comparison operators that can be used in a `where` clause?
   =, !=, <, >
@@ -22,6 +23,7 @@ Answer the following questions in the provided markdown file before turning in t
   using: 'limit' and then how many rows you want in an integer
 
 - How do you retrieve all columns from a database table?
+  using: select \*
 
 - How do you control the sort order of a result set?
   use 'order by' "category" desc(if you want it in descending order, default is asc for ascending)
