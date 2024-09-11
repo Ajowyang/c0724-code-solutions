@@ -16,7 +16,7 @@ Answer the following questions in the provided markdown file before turning in t
   variables that told configuration info for the specific environment the process is running in
 
 - What is a REPL?
-  an interactive programming environment that lets developers execute code snippets and see immediate results
+  an interactive programming environment that lets developers execute code snippets and see immediate result
 
 ## Notes
 
