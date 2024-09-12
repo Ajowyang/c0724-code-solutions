@@ -17,7 +17,7 @@ Answer the following questions in the provided markdown file before turning in t
   by calling a function like use(Express adds this function to the list of middleware it can work with) or get to add it to the middleware array
 
 - Which objects does an Express application pass to your middleware to manage the request/response lifecycle of the server?
-  request and response objects (req, res)
+  request and response objects (req, res), the next() function
 
   ## Notes
 
