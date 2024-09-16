@@ -37,6 +37,9 @@ app.get('/api/actors/:actorId', async (req, res, next) => {
 app.post('/api/actors', async (req, res, next) => {
   try {
     const { firstName, lastName } = req.body;
+    if (!firstName || !lastName) {
+      throw new ClientError(404, `firstName and lastName required!`);
+    }
     const sql = `
       insert into "actors" ("firstName", "lastName")
       values ($1, $2)
@@ -58,6 +61,9 @@ app.put('/api/actors/:actorId', async (req, res, next) => {
       throw new ClientError(400, `Non-integer actorId: ${actorId}`);
     }
     const { firstName, lastName } = req.body;
+    if (!firstName || !lastName) {
+      throw new ClientError(404, `firstName and lastName required!`);
+    }
     const sql = `
     update "actors"
       set "firstName" = $2,
@@ -70,8 +76,6 @@ app.put('/api/actors/:actorId', async (req, res, next) => {
     const actor = result.rows[0];
     if (!actor) throw new ClientError(404, `actor ${actorId} not found`);
     res.json(actor);
-
-    res.status(200).json(result.rows[0]);
   } catch (err) {
     next(err);
   }
@@ -90,9 +94,9 @@ app.delete('/api/actors/:actorId', async (req, res, next) => {
       returning *;
      `;
     const params = [actorId];
-    const result = await db.query(sql, params);
+    await db.query(sql, params);
 
-    res.status(204).json(result.rows[0]);
+    res.status(204).send();
   } catch (err) {
     next(err);
   }
