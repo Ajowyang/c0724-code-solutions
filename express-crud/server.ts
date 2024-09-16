@@ -125,7 +125,11 @@ app.delete('/api/grades/:gradeId', async (req, res, next) => {
   returning *
   `;
     const params = [gradeId];
-    await db.query(sql, params);
+    const result = await db.query(sql, params);
+    const grade = result.rows[0];
+    if (!grade) {
+      throw new ClientError(404, `target grade does not exist in the database`);
+    }
     res.status(204).send();
   } catch (err) {
     next(err);
