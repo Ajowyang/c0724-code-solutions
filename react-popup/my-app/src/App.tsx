@@ -5,6 +5,13 @@ import { Popup } from './Popup';
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const myRef = useRef<HTMLButtonElement>(null);
+  const menuItems = [
+    'menuItem1',
+    'menuItem2',
+    'menuItem3',
+    'menuItem4',
+    'superman',
+  ];
 
   return (
     <>
@@ -20,7 +27,8 @@ function App() {
         <Popup
           open={isOpen}
           onClose={() => setIsOpen(false)}
-          positionTo={myRef.current}></Popup>
+          positionTo={myRef.current}
+          children={menuItems}></Popup>
       )}
       <p>Paragraph of text #2</p>
     </>
