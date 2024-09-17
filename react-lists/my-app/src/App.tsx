@@ -9,11 +9,7 @@ const pokedex = [
 ];
 
 function App() {
-  return (
-    <>
-      <PokemonList pokedex={pokedex}></PokemonList>
-    </>
-  );
+  return <PokemonList pokedex={pokedex} />;
 }
 
 export default App;
