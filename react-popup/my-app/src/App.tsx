@@ -6,11 +6,11 @@ function App() {
   const [isOpen, setIsOpen] = useState(false);
   const myRef = useRef<HTMLButtonElement>(null);
   const menuItems = [
-    'menuItem1',
-    'menuItem2',
-    'menuItem3',
-    'menuItem4',
-    'superman',
+    <li>menuItem1</li>,
+    <li>menuItem2</li>,
+    <li>menuItem3</li>,
+    <li>menuItem4</li>,
+    <li>menuItem5</li>,
   ];
 
   return (
@@ -27,8 +27,9 @@ function App() {
         <Popup
           open={isOpen}
           onClose={() => setIsOpen(false)}
-          positionTo={myRef.current}
-          children={menuItems}></Popup>
+          positionTo={myRef.current}>
+          <ul>{menuItems}</ul>
+        </Popup>
       )}
       <p>Paragraph of text #2</p>
     </>

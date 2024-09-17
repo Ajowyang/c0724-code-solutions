@@ -1,10 +1,11 @@
+import { ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 
 type PopupProps = {
   open: boolean;
   positionTo?: HTMLElement | null;
   onClose: () => void;
-  children: string[];
+  children: ReactNode;
 };
 
 export function Popup({ open, positionTo, onClose, children }: PopupProps) {
@@ -16,7 +17,6 @@ export function Popup({ open, positionTo, onClose, children }: PopupProps) {
   const rect = positionTo?.getBoundingClientRect();
   const top = rect ? rect.bottom : '50%';
   const left = rect ? (rect.left + rect.width) / 2 : '50%';
-  const listItems = children.map((child) => <li>{child}</li>);
 
   const bgDivStyle = {
     opacity: 0.1,
@@ -30,7 +30,7 @@ export function Popup({ open, positionTo, onClose, children }: PopupProps) {
         className="bg-black w-screen h-screen fixed "
         style={bgDivStyle}></div>
       <div className="menu-wrapper absolute bg-white" style={{ top, left }}>
-        <ul className="list-none shadow-2xl border">{listItems}</ul>
+        {children}
       </div>
     </>,
     document.body
