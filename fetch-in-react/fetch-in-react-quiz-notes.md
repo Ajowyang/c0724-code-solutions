@@ -8,10 +8,10 @@ Answer the following questions in the provided markdown file before turning in t
   fetch()
 
 - What two things need to be done to properly handle HTTP request errors? Why?
-  catch block and guard clauses?
+  try/catch block checking with response.ok
 
 - How can `useEffect` be used to load data for a component?
-  it can make get requests inside of its code block
+  it can make get requests inside of its code block, to run asynchronous code, you need useEffect or eventHandlers to run asynchronous code
 
 - How do you use `useEffect` to load component data just once when the component mounts?
   by not putting anything in dependencies
