@@ -49,10 +49,10 @@ app.post('/api/auth/sign-up', async (req, res, next) => {
     const sql = `
     insert into "users" ("username", "hashedPassword")
     values($1, $2)
-    returning *
+    returning "userId, "userName", "createdAt"
     `;
-    const params = [username, hashedPass];
-    const result = await db.query<User>(sql, params);
+
+    const result = await db.query(sql, [username, hashedPass]);
     const [user] = result.rows;
     res.status(201).json(user);
   } catch (err) {
@@ -66,7 +66,7 @@ app.post('/api/auth/sign-in', async (req, res, next) => {
     if (!username || !password) {
       throw new ClientError(401, 'invalid login');
     }
-    throw new Error('Not implemented');
+
     /* TODO:
      * Delete the "Not implemented" error.
      * Query the database to find the "userId" and "hashedPassword" for the "username".
@@ -83,6 +83,20 @@ app.post('/api/auth/sign-in', async (req, res, next) => {
      *     Send the client a 200 response containing an object with 2 keys, "user" and "token",
      *       where "user"'s value is the payload and "token"'s value is the token.
      */
+
+    const sql = `
+    select * from "users"
+    where "username" = $1
+    `;
+    const result = await db.query(sql, [username]);
+    const user = result.rows[0];
+    if (!user) throw new ClientError(401, 'invalid login');
+    if (!argon2.verify(user.hashedPassword, password)) {
+      throw new ClientError(401, 'invalid login');
+    }
+    const payload = { userId: user.userId, username };
+    const token = jwt.sign(payload, hashKey);
+    res.json({ payload, token });
   } catch (err) {
     next(err);
   }
