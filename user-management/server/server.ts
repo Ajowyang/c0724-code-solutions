@@ -45,16 +45,17 @@ app.post('/api/auth/sign-up', async (req, res, next) => {
      *
      * Hint: Insert statements can include a `returning` clause to retrieve the inserted row(s).
      */
-    const hashedPass = argon2.hash(password);
+    const hashedPass = await argon2.hash(password);
+    console.log(`hashed password: ${hashedPass}`);
     const sql = `
     insert into "users" ("username", "hashedPassword")
     values($1, $2)
-    returning "userId, "userName", "createdAt"
+    returning "userId", "username", "createdAt"
     `;
 
     const result = await db.query(sql, [username, hashedPass]);
-    const [user] = result.rows;
-    res.status(201).json(user);
+
+    res.status(201).json(result.rows[0]);
   } catch (err) {
     next(err);
   }
@@ -91,18 +92,18 @@ app.post('/api/auth/sign-in', async (req, res, next) => {
     const result = await db.query(sql, [username]);
     const user = result.rows[0];
     if (!user) throw new ClientError(401, 'invalid login');
-    if (!argon2.verify(user.hashedPassword, password)) {
+    if (!(await argon2.verify(user.hashedPassword, password))) {
       throw new ClientError(401, 'invalid login');
     }
     const payload = { userId: user.userId, username };
     const token = jwt.sign(payload, hashKey);
-    res.json({ payload, token });
+    res.json({ user: payload, token });
   } catch (err) {
     next(err);
   }
 });
 
-app.get('/api/todos', async (req, res, next) => {
+app.get('/api/todos', authMiddleware, async (req, res, next) => {
   try {
     const sql = `
       select *
@@ -117,7 +118,7 @@ app.get('/api/todos', async (req, res, next) => {
   }
 });
 
-app.post('/api/todos', async (req, res, next) => {
+app.post('/api/todos', authMiddleware, async (req, res, next) => {
   try {
     const { task, isCompleted = false } = req.body;
     if (!task || typeof isCompleted !== 'boolean') {
@@ -137,7 +138,7 @@ app.post('/api/todos', async (req, res, next) => {
   }
 });
 
-app.put('/api/todos/:todoId', async (req, res, next) => {
+app.put('/api/todos/:todoId', authMiddleware, async (req, res, next) => {
   try {
     const todoId = Number(req.params.todoId);
     if (!Number.isInteger(todoId) || todoId < 1) {

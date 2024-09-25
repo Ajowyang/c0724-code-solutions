@@ -12,6 +12,14 @@ export function authMiddleware(
   next: NextFunction
 ): void {
   /* your code here */
+  const auth = req.get('authorization');
+  const token = auth?.split('Bearer ')[1];
+  if (!token) {
+    throw new ClientError(401, 'No bearer token found');
+  }
+  const payload = jwt.verify(token, hashKey);
+  req.user = payload as Request['user'];
+  next();
 }
 
 /*
