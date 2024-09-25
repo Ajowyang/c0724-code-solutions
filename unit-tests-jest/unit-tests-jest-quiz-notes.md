@@ -5,7 +5,7 @@
 Answer the following questions in the provided markdown file before turning in this exercise:
 
 - What are unit tests?
-  a way if testing a unit: which is the smallest piece of code that can be logically isolated in a system
+  a way if testing a unit: which is the smallest piece of code that can be logically isolated in a system. a unit is generally a function. Unit tests are automated
 
 - Why is it important to write unit tests?
   so we can test to see if the code we write is correct
