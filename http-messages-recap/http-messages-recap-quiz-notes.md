@@ -20,7 +20,7 @@ Answer the following questions in the provided markdown file before turning in t
   verision(HTTP/version number) / STATUS_CODE(3 digits ???) / Reason Phrase(text description of status code)
 
 - What are HTTP headers?
-  it is a message that conveys metadata about the HTTP request or response, written as key value pairs with name and value
+  it is a message that conveys metadata about the HTTP request or response, written as key value pairs with name and value, common ones include Content-type, Accept-Ranges
 
 - Is a body required for a valid HTTP message?
   no
